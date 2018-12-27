@@ -1,0 +1,31 @@
+dist: trusty
+sudo: false
+language: node_js
+
+node_js:
+  - "node"
+  - "10"
+  - "9"
+  - "8"
+  - "7"
+
+notifications:
+  email:
+    on_failure: always
+
+branches:
+  only:
+    - master
+
+services:
+  - mongodb
+
+install:
+  - npm install
+
+script:
+  - npm run lint
+  - npm run build
+  - npm test -- test/unit/
+  - npm test -- test/integration/
+  - npm test -- test/e2e/

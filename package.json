@@ -1,0 +1,49 @@
+{
+  "name": "DbFixtures-mongodb-driver",
+  "version": "1.0.0",
+  "description": "A MongoDB driver for the NPM dbfixtures package.",
+  "keywords": [
+    "db fixtures",
+    "test fixtures",
+    "fixtures"
+  ],
+  "homepage": "https://github.com/PedroHenriques/dbfixtures-mongodb-driver",
+  "bugs": "https://github.com/PedroHenriques/dbfixtures-mongodb-driver/issues",
+  "author": "Pedro Henriques <pedro@pedrojhenriques.com> (http://pedrojhenriques.com)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "directories": {
+    "dist": "dist/",
+    "test": "test/"
+  },
+  "scripts": {
+    "test": "mocha",
+    "lint": "tslint -c ./tslint.json -p ./tsconfig.json",
+    "build": "tsc",
+    "watch": "npm run build -- -w",
+    "prestart": "npm run build && npm run lint",
+    "start": "node dist/index.js",
+    "run": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:PedroHenriques/dbfixtures-mongodb-driver.git"
+  },
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@types/mongodb": "^3.1.18",
+    "@types/node": "^10.12.18",
+    "chai": "^4.2.0",
+    "dbfixtures": "^1.0.1",
+    "mocha": "^5.2.0",
+    "proxyquire": "^2.1.0",
+    "sinon": "^7.2.2",
+    "tslint": "^5.12.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "mongodb": "^3.1.10"
+  }
+}
