@@ -1,5 +1,5 @@
 {
-  "name": "DbFixtures-mongodb-driver",
+  "name": "dbfixtures-mongodb-driver",
   "version": "1.0.0",
   "description": "A MongoDB driver for the NPM dbfixtures package.",
   "keywords": [
