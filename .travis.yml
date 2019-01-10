@@ -2,12 +2,18 @@ dist: trusty
 sudo: false
 language: node_js
 
-node_js:
-  - "node"
-  - "10"
-  - "9"
-  - "8"
-  - "7"
+matrix:
+  include:
+    - node_js: "node"
+      env: NODE_VERSION=node
+    - node_js: "10"
+      env: NODE_VERSION=10
+    - node_js: "9"
+      env: NODE_VERSION=9
+    - node_js: "8"
+      env: NODE_VERSION=8
+    - node_js: "7"
+      env: NODE_VERSION=7
 
 notifications:
   email:
@@ -22,6 +28,10 @@ services:
 
 install:
   - npm install
+  - if [ $NODE_VERSION == "7" ]; then
+      echo "Using version '1.0.*' of the devDependency 'dbfixtures'";
+      npm install dbfixtures@1.0.*;
+    fi
 
 script:
   - npm run lint
