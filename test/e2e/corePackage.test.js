@@ -40,7 +40,7 @@ describe('Entry point', function () {
 
   after(function () {
     client.close();
-    mongoDriver.close();
+    dbFixtures.closeDrivers();
   });
 
   beforeEach(async function () {
