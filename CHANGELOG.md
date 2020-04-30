@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.0] - 2020-04-30
+### Changed
+- Updated "mongodb" dependencies to version 3.5.7
+
 ## [1.1.0] - 2019-09-14
 ### Changed
 - Updated NPM dependencies to latest versions
